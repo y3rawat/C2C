@@ -246,17 +246,24 @@
         console.error('Failed to fetch IP address');
       }
     });
-
-    function redirectToClickHTML() {
-    // Get the referral code from the input field
-    var referralCode = document.querySelector('input[name="reffer"]').value;
-    
-    // Construct the referral link with the referral code
-    var referralLink = 'https://c2-c.vercel.app/wating_list.html?reffer=' + encodeURIComponent(referralCode);
-    
-    // Redirect to the referral link
-    window.location.href = referralLink;
+// Function to extract the referral code from the URL
+function getReferralCodeFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('reffer'); // 'reffer' is the parameter name from the URL
 }
+
+// Function to populate the referral code field in the form
+function populateReferralCodeField() {
+    const referralCode = getReferralCodeFromURL();
+    if (referralCode) {
+        // If a referral code exists in the URL, populate the referral code field
+        document.querySelector('input[name="reffer"]').value = referralCode;
+    }
+}
+
+// Call the function to populate the referral code field when the page loads
+window.addEventListener('DOMContentLoaded', populateReferralCodeField);
+
   </script>
 
 <style>
