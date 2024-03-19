@@ -1,0 +1,144 @@
+<!-- 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+</head>
+<body>
+    <h1>Submitted Data</h1>
+    <p>Name: <span id="submittedName"></span></p>
+    <p>Email: <span id="submittedEmail"></span></p>
+
+    <script>
+        // Retrieve submitted data from local storage
+        const submittedName = localStorage.getItem('submittedName');
+        const submittedEmail = localStorage.getItem('submittedEmail');
+        
+        // Display submitted data
+        document.getElementById('submittedName').textContent = submittedName;
+        document.getElementById('submittedEmail').textContent = submittedEmail;
+    </script>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
+	<style>
+		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
+		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+	</style>
+	<link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
+	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
+	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
+</head>
+<body>
+    
+  <!-- Your form -->
+  <form id="myForm">
+
+  </form>
+
+  <!-- Loader element -->
+  <div id="loader" style="display: none;">Loading...</div>
+
+  <script>
+    const SU = 'https://script.google.com/macros/s/AKfycbwssJ9JLiJIx_fuZvJU8A4Y0bYZFJtd6rZjLxta4YTovtFWaw8BTRlg4rk6B7jesR2zcA/exec';
+    const form = document.getElementById('myForm');
+
+    // Function to fetch the user's IP address
+    async function getUserIPAddress() {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+      } catch (error) {
+        console.error('Error getting IP address:', error.message);
+        return null;
+      }
+    }
+
+    // Function to submit the form
+    async function submitForm() {
+      const ip = await getUserIPAddress();
+      if (ip) {
+        const formData = new FormData(form);
+
+        formData.append('ip_address', ip+'  '+'End_page');
+        
+
+        fetch(SU, {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            // Hide the loader when the response is received
+            document.getElementById('loader').style.display = 'none';
+            if (response.ok) {
+              // Get submitted data
+              
+              const name = 'thisiisthename';
+              
+              
+              localStorage.setItem('submittedName', name1);
+              
+            } else {
+              console.log('ipnotfetched not filled')
+            }
+          })
+          .catch(error => {
+            // Hide the loader if there's an error
+            document.getElementById('loader').style.display = 'none';
+            console.error('Error!', error.message);
+          });
+      } else {
+        console.error('Failed to fetch IP address');
+      }
+    }
+
+    // Call submitForm() when the page loads
+    submitForm();
+  </script>
+
+    
+	<header class="site-header" id="header">
+		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
+	</header>
+    
+	<div class="main-content">
+		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+		<p class="main-content__body" data-lead-id="main-content-body">Thanks You <span id="submittedName"></span> for providing your email and name.
+             We appreciate your interest and look forward to keeping you updated with the latest news and opportunities
+            </p>
+            <h3>
+                Your Refferl Code is -: <span id="submittedEmail"></span>  ( Your Email :D )
+            </h3>
+	</div>
+
+	<footer class="site-footer" id="footer">
+		<p class="site-footer__fineprint" id="fineprint">Copyright ©2024 | All Rights Reserved</p>
+	</footer>
+    <script>
+        // Retrieve submitted data from local storage
+        const submittedName = localStorage.getItem('submittedName');
+        const submittedEmail = localStorage.getItem('submittedEmail');
+        
+        // Display submitted data
+        document.getElementById('submittedName').textContent = submittedName;
+        document.getElementById('submittedEmail').textContent = submittedEmail;
+    </script>
+</body>
+</html>

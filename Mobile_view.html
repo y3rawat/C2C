@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" data-a11y-animated-images="system" data-a11y-link-underlines="true">
+
+
+
+
+<head>
+  <meta charset="utf-8">
+
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="css/light1.css" />
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="css/dark1.css" />
+
+
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="css/a1.css" />
+
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="css/a.css" />
+
+
+
+
+  
+  <script crossorigin="anonymous" defer="defer" type="application/javascript"
+    src="js/js1.js"></script>
+  
+  <script crossorigin="anonymous" defer="defer" type="application/javascript"
+    src="js/j2.js"></script>
+  <script crossorigin="anonymous" defer="defer" type="application/javascript"
+    src="js/j3.js"></script>
+  
+  <script crossorigin="anonymous" defer="defer" type="application/javascript"
+    src="js/j4.js"></script>
+
+  <script crossorigin="anonymous" defer="defer" type="application/javascript"
+    src="js/j5.js"></script>
+  <script crossorigin="anonymous" defer="defer" type="application/javascript"
+    src="js/j6.js"></script>
+  
+  
+  
+
+  <title>C2C: Let's Connect opportunity with Talent </title>
+
+
+
+
+
+
+
+
+  <meta name="viewport" content="width=device-width">
+
+  <meta name="description"
+    content="C2C is a who is building a dynamic platform that bridges the gap between job seekers and their dream roles. Weather they are a candidate seeking the perfect fit or a company hunting for top talent. Our personalized recommendations match skills to specific job roles, ensuring a seamless connection for success.">
+
+  <link rel="fluid-icon" href="images/Logo.svg" title="C2C">
+
+
+
+
+
+
+
+
+  <meta name="hostname" content="c2c.com">
+
+
+
+  <meta name="expected-hostname" content="c2c.com">
+
+
+
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="css/home.css" />
+
+  <meta name="is_logged_out_page" content="true">
+
+  <link rel="mask-icon" href="images/Logo.svg" color="#000000">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="images/LogoBlack.svg">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="images/Logo_top.svg">
+
+  <meta name="theme-color" content="#FDFAF3">
+
+
+</head>
+
+  <!-- Your form -->
+  <form id="myForm">
+
+  </form>
+
+  <!-- Loader element -->
+  <div id="loader" style="display: none;">Loading...</div>
+
+  <script>
+    const SU = 'https://script.google.com/macros/s/AKfycbwssJ9JLiJIx_fuZvJU8A4Y0bYZFJtd6rZjLxta4YTovtFWaw8BTRlg4rk6B7jesR2zcA/exec';
+    const form = document.getElementById('myForm');
+
+    // Function to fetch the user's IP address
+    async function getUserIPAddress() {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+      } catch (error) {
+        console.error('Error getting IP address:', error.message);
+        return null;
+      }
+    }
+
+    // Function to submit the form
+    async function submitForm() {
+      const ip = await getUserIPAddress();
+      if (ip) {
+        const formData = new FormData(form);
+
+        formData.append('ip_address', ip+'  '+'Mobile');
+        
+
+        fetch(SU, {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            // Hide the loader when the response is received
+            document.getElementById('loader').style.display = 'none';
+            if (response.ok) {
+              // Get submitted data
+              
+              const name = 'thisiisthename';
+              
+              
+              localStorage.setItem('submittedName', name1);
+              
+            } else {
+              console.log('ipnotfetched not filled')
+            }
+          })
+          .catch(error => {
+            // Hide the loader if there's an error
+            document.getElementById('loader').style.display = 'none';
+            console.error('Error!', error.message);
+          });
+      } else {
+        console.error('Failed to fetch IP address');
+      }
+    }
+
+    // Call submitForm() when the page loads
+    submitForm();
+  </script>
+
+<body class="logged-out env-production page-responsive header-overlay home-campaign" style="word-wrap: break-word;">
+  <div data-turbo-body class="logged-out env-production page-responsive header-overlay home-campaign"
+    style="word-wrap: break-word;">
+
+
+
+    <div class="position-relative js-header-wrapper ">
+
+
+      <header class="Header-old header-logged-out js-details-container Details position-relative f4 py-3" role="banner"
+        data-color-mode=light data-light-theme=light data-dark-theme=dark>
+
+        <div class=" d-flex flex-column flex-lg-row flex-items-center p-responsive height-full position-relative z-1">
+          <div class="d-flex flex-justify-between flex-items-center width-full width-lg-auto">
+
+
+
+            <div class="flex-1">
+              <img src="images/Logo.svg" alt="">
+            </div>
+
+            <div class="flex-1 flex-order-2 text-right">
+
+
+
+
+
+
+
+
+
+
+
+      </header>
+
+      <div hidden="hidden" data-view-component="true"
+        class="js-stale-session-flash stale-session-flash flash flash-warn flash-full mb-3">
+
+
+
+      </div>
+
+
+
+
+      <div class="overflow-hidden" data-color-mode=dark data-light-theme=light data-dark-theme=dark>
+        <div class="container-xl position-relative">
+
+          <img alt="" aria-hidden="true" width="860" height="544"
+            class="events-none d-sm-none width-full height-auto mb-n3" src="images/topback.svg" />
+        </div>
+
+        <div class="px-3 home-campaign-hero">
+          <div class="position-relative pt-100 pt-sm-1 pt-lg-2 container-xl js-build-in-trigger" data-hpc>
+            <div class="d-flex pt-sm-1">
+              <div class="col-1 d-flex flex-column events-none position-relative">
+                <div class="mx-auto">
+                  <div class=" circle p-1" style="border: 3px solid rgb(255, 200, 0);"></div>
+                </div>
+                <div style="background: linear-gradient(transparent, #ffea72 30%); height: 82%"
+                  class="home-campaign-bit-line rounded mx-auto">
+
+                  <div class="mx-auto my-3 home-campaign-glowing-icon">
+                    <div class="position-relative d-inline-block z-1">
+
+                      <span
+                        class="position-absolute left-0 top-0 height-full width-full home-campaign-glowing-icon-glow circle z-n1"
+                        style="background-color: var(--mktg-accent-primary); filter: blur(18px);"></span>
+                    </div>
+                  </div>
+                </div>
+                <div style="background: linear-gradient(#ffea72, #24ef50 80%, #fbff1c);"
+                  class="home-campaign-bit-line height-full rounded mx-auto"></div>
+              </div>
+
+              <div class="col-11 text-left  pl-sm-0 mt-n4">
+                <div class="position-relative z-1 mb-1 mb-sm-1">
+                </div>
+
+
+
+                <style>
+                  #slider {
+
+                    width: 400px;
+                    display: flex;
+                    gap: 10px;
+                    font-size: 20px;
+                    margin-top: -90px;
+                    margin-left: -30px;
+
+                  }
+
+
+
+
+
+                  #sliderValue {
+                    display: flex;
+
+                    color: #ffbf00;
+                    font-weight: 10;
+                    font-weight: bold;
+                    /* Set font-weight to bold */
+
+                  }
+
+                  .start {
+                    opacity: 0;
+
+                  }
+
+
+                  .animation {
+                    animation: fade .3s forwards;
+                  }
+
+                  @keyframes fade {
+                    0% {
+                      opacity: 0;
+                      transform: translateY(2px);
+                    }
+
+                    100% {
+                      opacity: 1;
+                      transform: translateY(0px);
+                    }
+                  }
+
+                  .holder-animation {
+                    animation: holder 4s;
+                  }
+
+                  @keyframes holder {
+                    0% {
+                      opacity: 1;
+                    }
+
+                    95% {
+                      opacity: 1;
+                    }
+
+                    100% {
+                      opacity: 0;
+                    }
+                  }
+                </style>
+
+
+                <div id="slider">
+                  <div class="span"> We will find a right </div>
+
+                  <div class="span" id="sliderValue"></div>
+                </div>
+
+
+
+                <script>
+                  var sliderCounter = 0;
+                  var sliderContent = [
+                    "Company for you",
+                    "Candidate for you"
+                  ];
+                  var sliderValue = document.querySelector("#sliderValue");
+
+                  function slide() {
+                    if (sliderCounter >= sliderContent.length) {
+                      sliderCounter = 0;
+                    }
+
+                    sliderValue.innerHTML = "";
+
+                    for (var i = 0; i < sliderContent[sliderCounter].length; i++) {
+                      let letterDiv = document.createElement("div");
+                      letterDiv.innerHTML = sliderContent[sliderCounter][i];
+
+                      if (letterDiv.innerHTML == " ") {
+                        letterDiv.innerHTML = "&nbsp;";
+                      }
+                      letterDiv.classList.add("start");
+                      letterDiv.classList.add("animation");
+                      letterDiv.style.animationDelay = i / 10 + "s";
+                      sliderValue.appendChild(letterDiv);
+                    }
+
+                    sliderCounter++;
+                  }
+
+                  slide();
+                  setInterval(slide, 4000);
+
+
+
+                </script>
+
+                <p class="f2-mktg text-normal color-fg-muted mb-3 mb-md-10 position-relative z-1">
+                  Join Our Waiting list to get the priority access.
+
+                </p>
+
+                <div class="d-flex flex-column flex-md-row">
+                  <!-- '"` --><!-- </textarea></xmp> --></option>
+                  </form>
+                  <form data-turbo="false" class="mx-0 col-12 col-md-7 col-lg-5 js-signup-form position-relative z-2"
+                    autocomplete="off" action="/signup" accept-charset="UTF-8" method="get">
+                    <div class="d-flex flex-column flex-md-row flex-items-center">
+                    
+
+                      <style>
+
+                        .t {
+
+                          margin-left: 90px;
+                          margin-top: -80px;
+                        }
+                      </style>
+
+
+                     
+
+                      <input type="hidden" name="source" value="form-home-signup">
+
+                      <button class="btn-mktg width-full width-md-auto mb-3 mb-md-0 rounded-md-left-0 home-campaign-signup-button btn-signup-mktg" type="submit">
+                        <a href="wating_list.html" style="text-decoration: none; color: inherit;">Join a waiting list</a>
+                      </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home-campaign-productivity js-section overflow-hidden px-3 pb-8 pt-5" data-color-mode="dark"
+          data-light-theme="light" data-dark-theme="dark" id="productivity">
+          <div class="container-xl">
+
+            <div class="d-flex js-build-in-trigger position-relative" data-build-in-stagger="100"
+              data-build-margin-bottom="20">
+              <div class="col-1 d-flex flex-column flex-items-center">
+                <div class="mb-4 position-relative home-campaign-glowing-icon">
+                  <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                    data-view-component="true" class="octicon octicon-briefcase">
+                    <path
+                      d="M7.5 1.75C7.5.784 8.284 0 9.25 0h5.5c.966 0 1.75.784 1.75 1.75V4h4.75c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 21.25 22H2.75A1.75 1.75 0 0 1 1 20.25V5.75C1 4.784 1.784 4 2.75 4H7.5Zm-5 10.24v8.26c0 .138.112.25.25.25h18.5a.25.25 0 0 0 .25-.25v-8.26A4.235 4.235 0 0 1 18.75 13H5.25a4.235 4.235 0 0 1-2.75-1.01Zm19-3.24v-3a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v3a2.75 2.75 0 0 0 2.75 2.75h13.5a2.75 2.75 0 0 0 2.75-2.75Zm-6.5-7a.25.25 0 0 0-.25-.25h-5.5a.25.25 0 0 0-.25.25V4h6Z">
+                    </path>
+                  </svg>
+                  <span
+                    class="position-absolute left-0 top-0 height-full width-full home-campaign-glowing-icon-glow circle z-n1"
+                    style="background-color: var(--mktg-accent-primary); filter: blur(18px);"></span>
+                </div>
+                <div class="home-campaign-bit-line height-full rounded js-build-in-item build-in-scale-top"
+                  style="background: linear-gradient(#3FB950, #ffd500, transparent);" data-build-delay="500"></div>
+              </div>
+
+              <div class="col-11 col-lg-8 ml-2 ml-md-0 mb-6 mb-md-10">
+
+
+                <h2 class="h5-mktg mb-4 text-medium">For Candidates</h2>
+                <h3 class="h3-mktg mb-4 text-medium">
+                  <span class="text-accent-primary d-block">Role Recommender System </span>
+                  LLM Based Job Recommender from Soft and Hard Skills.
+                </h3>
+              </div>
+
+
+            </div>
+
+            <div class="js-build-in-trigger">
+              <img alt="" aria-hidden="true" width="2496" height="1302"
+                class="width-full d-block height-auto position-relative z-1 rounded-3 border js-build-in-item build-in-slideX-right"
+                loading="lazy" decoding="async" src="images/MNC1.svg" />
+            </div>
+
+            <div class="d-flex js-build-in-trigger position-relative" data-build-in-stagger="100">
+
+
+              <div class="col-1 d-flex flex-column flex-items-center position-relative">
+                <div
+                  class="home-campaign-bit-line height-full position-relative z-1 js-build-in-item build-in-scale-top"
+                  style="transition-duration: 900ms; background: linear-gradient(transparent, #3FB950, #3FB950, transparent);">
+                </div>
+                <img alt="" aria-hidden="true" width="81" height="485"
+                  style="left: calc(50% - 2px); height: auto; max-width: 9vw;"
+                  class="d-none d-md-block position-absolute bottom-4 js-build-in-item build-in-scale-fade"
+                  loading="lazy" decoding="async"
+                  src="https://bithub.bithubassets.com/assets/bit-branch-productivity-c304b83d09c7.svg" />
+              </div>
+
+              <div class="col-11 ml-2 ml-md-6">
+                <div
+                  class="river-mktg js-build-in-trigger d-flex gutter gutter-spacious my-5 my-sm-7 my-md-8 position-relative flex-column-reverse flex-md-items-center flex-md-row flex-column pb-4 pb-md-7"
+                  data-build-in-stagger="100">
+                  <div
+                    class="col-12 py-3 mb-2 js-build-in-item col-sm-10 col-md-6 text-left col-lg-6 build-in-slideX-right">
+                    <div class="pr-md-4">
+
+
+
+
+                      <h2 class="color-fg-default mb-3 f2-mktg color-fg-muted"><em>Role Recommender</em> empowers
+                        Candidates to prepare for Job Interviews. and suggest companys for apply based -> (role of job,
+                        Soft skills and Hard Skills).</h2>
+
+
+
+                    </div>
+                  </div>
+
+                  <div class="col-12 py-3 col-md-6 col-lg-3">
+                    <div class="position-relative">
+
+                      <div class="d-flex flex-column position-relative">
+                        <div
+                          class="js-build-in-item build-in-slideX-right overflow-hidden rounded-3 position-relative z-1 d-none d-md-block"
+                          style="max-width: 480px; margin-top: -100%">
+                          <img src="images/MNCPrepration.svg" loading="fast" width="960" height="1222" alt="" decoding="async"
+                            class="width-full d-block height-auto">
+                        </div>
+
+                        <div
+                          class="js-build-in-item build-in-slideX-right overflow-hidden rounded-3 position-absolute right-3 bottom-3 bottom-sm-0 z-1 d-md-none"
+                          style="max-width: 60%;">
+                          <img src="images/MNCPrepration.svg" loading="lazy" width="960" height="1222" alt="" decoding="async"
+                            class="width-full d-block height-auto">
+                        </div>
+
+                        <img alt="" aria-hidden="true" width="1000" height="1000"
+                          class="position-absolute d-none d-md-block events-none js-build-in-item build-in-fade"
+                          style="bottom: -300px; right: -200px;" loading="lazy" decoding="async"
+                          src="https://bithub.bithubassets.com/assets/bg-glow-purple-6e9a6a96cb04.png" />
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-6 mb-md-7 pb-4 js-build-in-trigger">
+                  <div class="py-3 text-left col-sm-8 col-md-7 col-lg-6 col-xl-5 js-build-in-item build-in-slideX-left">
+                    <div class="gradient-border-mktg d-inline-block z-1 position-relative px-2 lh-condensed f6-mktg"
+                      style="top: -20px">
+                      <span class="text-gradient-mktg text-semibold">Benifit of this?</span>
+                    </div>
+
+                    <h3 class="text-accent-primary mb-2  h1-mktg text-medium " style="top: -40px;">Real-Time Tracking
+                      system </h3>
+                    <p class="mb-3 f2-mktg text-medium col-6-max">
+                      In future, You can apply for MNC Jobs with one click.
+                      You can prepare more for Roles and Track the Progress for different companys.</p>
+
+                      <h3 class="text-accent-primary mb-2 mt-3 h1-mktg bl text-medium">Simplified Application Process </h3>
+                      <p class="mb-3 f2-mktg text-medium col-6-max">
+                        Integration with MNC job portals and application platforms enables candidates to apply for multiple positions with a single click,
+                         streamlining the application process.</p>
+      
+                      <h3 class="text-accent-primary mb-2 mt-3 h1-mktg bb text-medium">Access to MNC Opportunities </h3>
+                      <p class="mb-3 f2-mktg text-medium col-6-max">
+                        The system's capability to suggest roles at multinational corporations broadens candidates' access to varied job opportunities worldwide</p>
+      
+                      <h4 class="text-accent-primary mb-2 mt-3 h1-mktg ba text-medium">Enhanced Interview Preparation</h4>
+                      <p class="mb-3 f2-mktg text-medium col-6-max">
+                        The system provides valuable resources and guidance for effective interview preparation, including tips, sample questions, and insights into required skills for recommended roles. </p>
+      
+      
+                  </div>
+                </div>
+
+
+
+                <div class="text-accent-primary t">And many more....</div>
+              </div>
+
+            </div>
+
+
+
+
+
+            <style>
+              .vertical-line {
+                width: 100%;
+                /* Adjust width as needed */
+                height: 2px;
+                background-color: rgb(239, 187, 0);
+                margin-top: 20px;
+              }
+            </style>
+            <div class="vertical-line"></div>
+
+            <div class="home-campaign-bit-line height-full rounded js-build-in-item build-in-scale-top"
+              style="background: linear-gradient(#3FB950, #ffd500, transparent);" data-build-delay="500">
+            </div>
+          </div>
+
+          
+
+          <div class="col-11 col-lg-8 ml-2 ml-md-0 mb-6 mb-md-10" style="margin-top: 40px">
+
+            <h1 class="h2-mktg mb-4 text-medium">For Company</h1>
+            <h3 class="h3-mktg mb-4 text-medium">
+              <style>
+                .text-accent-primary1 {
+                  color: #eed200;
+                
+                }
+                .bl{
+                    color: #00eee2;
+                }
+                .ba{
+                    color: #ffff00;
+                }
+                .bb{
+                    color: #ff8400;
+                }
+              </style>
+              <span class="text-accent-primary1 d-block">Strategic Candidate Selection System.</span>
+              <h2 class="color-fg-default mb-3 f2-mktg color-fg-muted">Through a strategic approach, companies will
+                receive the list of candidates based on the role for company and they can engage with potential
+                candidates based on their skills, experiences, and fit for specific roles. In other words Company will
+                chose candidate instead of candidate filling the form.</h2>
+
+          </div>
+
+
+
+
+        </div>
+
+        <div class="js-build-in-trigger">
+          <img alt="" aria-hidden="true" width="2496" height="1302"
+            class="width-full d-block height-auto position-relative z-1 rounded-3 border js-build-in-item build-in-slideX-right"
+            loading="lazy" decoding="async" src="images/cselection1.svg" />
+        </div>
+
+        <div class="d-flex js-build-in-trigger position-relative" data-build-in-stagger="100">
+
+
+          <div class="col-1 d-flex flex-column flex-items-center position-relative">
+            <div class="home-campaign-bit-line height-full position-relative z-1 js-build-in-item build-in-scale-top"
+              style="transition-duration: 900ms; background: linear-gradient(transparent, #3FB950, #3FB950, transparent);">
+            </div>
+            <img alt="" aria-hidden="true" width="81" height="485"
+              style="left: calc(50% - 2px); height: auto; max-width: 9vw;"
+              class="d-none d-md-block position-absolute bottom-4 js-build-in-item build-in-scale-fade" loading="lazy"
+              decoding="async" src="https://github.bithubassets.com/assets/bit-branch-productivity-c304b83d09c7.svg" />
+          </div>
+
+          <div class="col-11 ml-2 ml-md-6">
+            <div
+              class="river-mktg js-build-in-trigger d-flex gutter gutter-spacious my-5 my-sm-7 my-md-8 position-relative flex-column-reverse flex-md-items-center flex-md-row flex-column pb-4 pb-md-7"
+              data-build-in-stagger="100">
+              <div
+                class="col-12 py-3 mb-2 js-build-in-item col-sm-10 col-md-6 text-left col-lg-6 build-in-slideX-right">
+                <div class="pr-md-4">
+
+
+
+
+                  <h2 class="color-fg-default mb-3 f2-mktg color-fg-muted"><em>Strategic Candidate Selection System</em>
+                    This will also focused on identifying transferable skills and potential rather than solely relying
+                    on past experience and current knowledge.</h2>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-12 py-3 col-md-6 col-lg-6">
+                <div class="position-relative">
+
+                  <div class="d-flex flex-column position-relative">
+                    <div
+                      class="js-build-in-item build-in-slideX-right overflow-hidden rounded-3 position-relative z-1 d-none d-md-block"
+                      style="max-width: 480px; margin-top: 0%">
+                      <img src="images/cselecction2.svg" loading="lazy" width="560" height="922" alt="" decoding="async"
+                        class="width-full d-block height-auto">
+                    </div>
+
+                    <div
+                      class="js-build-in-item build-in-slideX-right overflow-hidden rounded-3 position-absolute right-3 bottom-3 bottom-sm-0 z-1 d-md-none"
+                      style="max-width: 50%;">
+                      <img src="images/cselecction2.svg" loading="lazy" width="760" height="922" alt="" decoding="async"
+                        class="width-full d-block height-auto">
+                    </div>
+
+                    <img alt="" aria-hidden="true" width="1000" height="1000"
+                      class="position-absolute d-none d-md-block events-none js-build-in-item build-in-fade"
+                      style="bottom: -300px; right: -200px;" loading="lazy" decoding="async"
+                      src="https://bithub.bithubassets.com/assets/bg-glow-purple-6e9a6a96cb04.png" />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="mb-6 mb-md-7 pb-4 js-build-in-trigger">
+              <div class="py-3 text-left col-sm-8 col-md-7 col-lg-6 col-xl-5 js-build-in-item build-in-slideX-left">
+                <div class="gradient-border-mktg d-inline-block z-1 position-relative px-2 lh-condensed f6-mktg"
+                  style="top: -1px">
+                  <span class="text-gradient-mktg text-semibold">Benifit of this?</span>
+                </div>
+
+                <h3 class="text-accent-primary mb-2 mt-3 h1-mktg bl text-medium">Targeted Talent Pipeline </h3>
+                <p class="mb-3 f2-mktg text-medium col-6-max">
+                  Candidates will not just randomly selected but are chosen based on their skills, experiences, and fit
+                  for the specific positions within the company.</p>
+
+                <h3 class="text-accent-primary mb-2 mt-3 h1-mktg bb text-medium">Efficient Hiring Process </h3>
+                <p class="mb-3 f2-mktg text-medium col-6-max">
+                  Companies can save time and resources by engaging with candidates who are already deemed suitable for
+                  the roles, rather than sifting through a large number of applications or resumes.</p>
+
+                <h4 class="text-accent-primary mb-2 mt-3 h1-mktg ba text-medium">Improved Employee Engagement </h4>
+                <p class="mb-3 f2-mktg text-medium col-6-max">
+                  When employees are placed in roles that align with their skills and interests, they are more likely to
+                  be engaged and motivated. This can lead to higher levels of productivity, job satisfaction, and
+                  overall employee retention.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-accent-primary t">And many more....</div>
+
+
+
+
+
+
+        <div class="col-1 d-flex flex-column flex-items-center js-build-in-trigger">
+          <div class="home-campaign-bit-line mt-n3 mt-md-n4 mb-n8 rounded js-build-in-item build-in-scale-top"
+            style="height: 160px; background: linear-gradient(transparent, #33B3AE 40%);"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="home-campaign-security js-section overflow-hidden px-3 pb-2 pt-5" data-color-mode="dark"
+    data-light-theme="light" data-dark-theme="dark" id="security">
+    <div class="container-xl">
+
+      <div class="d-flex js-build-in-trigger position-relative" data-build-in-stagger="100">
+        <div class="col-1 d-flex flex-column flex-items-center">
+          <div class="mb-4 position-relative home-campaign-glowing-icon js-build-in-item build-in-scale-fade">
+
+            <img src="images/people.png" height="30" viewBox="0 0 44 44" alt="">
+            <span
+              class="position-absolute left-0 top-0 height-full width-full home-campaign-glowing-icon-glow circle z-n1"
+              style="background-color: var(--mktg-accent-primary); filter: blur(18px);"></span>
+          </div>
+
+          <div class="home-campaign-bit-line height-full rounded js-build-in-item build-in-scale-top"
+            style="background: linear-gradient(#33B3AE 40%, transparent);" data-build-delay="500"></div>
+        </div>
+
+        <div class="col-11 col-lg-7 ml-2 ml-md-0 mb-6 mb-md-10 pr-lg-3">
+          <h3 class="h5-mktg mb-4 text-medium js-build-in-item build-in-slideX-left">Reffrel Program</h3>
+          <h2 class="h3-mktg mb-4 text-medium js-build-in-item build-in-slideX-left">
+            <span class="text-accent-primary d-block">Earn as They Succeed</span> Your Referrals, Your Rewards.
+          </h2>
+        </div>
+
+        <img alt="" aria-hidden="true" width="595" height="595"
+          class="position-absolute height-auto d-none d-md-block col-8 events-none" style="top: -10%; right: -25%;"
+          loading="lazy" decoding="async" src="https://bithub.bithubassets.com/assets/shape-2-f30dcc9bd35c.svg" />
+      </div>
+
+      <card-skew class="overflow-hidden rounded-3 mb-3 mb-md-5 position-relative z-1">
+        <div
+          class="color-bg-subtle border rounded-3 p-2 p-lg-6 js-build-in-trigger feature-card-mktg z-1 position-relative"
+          data-target="card-skew.bounding" data-build-in-stagger="200">
+          <div class="color-fg-subtle p-4">
+            <div class="f5 text-medium">How will it work -:</div>
+
+          </div>
+
+          <div class="position-relative d-flex flex-column flex-md-row gutter-spacious col-lg-10 mx-auto my-lg-6">
+            <div class="col-md-6 js-build-in-item build-in-scale-right">
+              <div class="p-4 rounded mt-5 box-shadow-mktg-xl mb-6" style="background: rgba(235, 245, 255, 0.2);">
+                <ul class="list-style-none mb-n4">
+                  <li
+                    class="mb-4 f4-mktg d-flex flex-items-center flex-justify-between js-build-in-item build-in-scale-fade">
+                    <div class="d-flex flex-items-center">
+                      <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                        data-view-component="true" class="octicon octicon-check-circle-fill color-fg-success mr-2">
+                        <path
+                          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z">
+                        </path>
+                      </svg>
+                      <span class="text-medium">Reffer to friends</span>
+                    </div>
+                    <span class="f5 color-fg-muted d-none d-sm-block">1m 21s</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="home-campaign-ghas-connect position-relative position-md-absolute z-1 d-flex flex-items-center js-build-in-item build-in-scale-fade">
+              <div class="d-inline-block circle p-1 color-bg-emphasis" style="box-shadow: 0 0 0 2px #444D56;"></div>
+              <div style="width: 40px; height: 2px; background: #D1D5DA;"></div>
+              <div class="d-inline-block circle p-1 color-bg-emphasis" style="box-shadow: 0 0 0 2px #444D56;"></div>
+            </div>
+
+            <div class="col-md-6 js-build-in-item build-in-scale-right">
+              <div class="pt-2 pb-1 px-4 rounded-top-2 d-inline-block text-medium"
+                style="background: rgba(235, 245, 255, 0.2);">
+                He/She join using your code
+              </div>
+              <div class="p-4 rounded-bottom-2 rounded-right-2 box-shadow-mktg-xl mb-6"
+                style="background: rgba(235, 245, 255, 0.2);">
+                <ul class="list-style-none mb-n4">
+                  <li
+                    class="mb-4 f4-mktg d-flex flex-items-center flex-justify-between js-build-in-item build-in-scale-fade">
+                    <div class="d-flex flex-items-center">
+                      <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                        data-view-component="true" class="octicon octicon-check-circle-fill color-fg-success mr-2">
+                        <path
+                          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z">
+                        </path>
+                      </svg>
+                      <span class="text-medium">Give Tests for Recommender</span>
+                    </div>
+                    <span class="f5 color-fg-muted d-none d-sm-block">1m 42s</span>
+                  </li>
+                  <li
+                    class="mb-4 f4-mktg d-flex flex-items-center flex-justify-between js-build-in-item build-in-scale-fade">
+                    <div class="d-flex flex-items-center">
+                      <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                        data-view-component="true" class="octicon octicon-check-circle-fill color-fg-success mr-2">
+                        <path
+                          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z">
+                        </path>
+                      </svg>
+                      <span class="text-medium">Get a best roles match</span>
+                    </div>
+                    <span class="f5 color-fg-muted d-none d-sm-block">1m 24s</span>
+                  </li>
+                  <li
+                    class="mb-4 f4-mktg d-flex flex-items-center flex-justify-between js-build-in-item build-in-scale-fade">
+                    <div class="d-flex flex-items-center">
+                      <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                        data-view-component="true" class="octicon octicon-check-circle-fill color-fg-success mr-2">
+                        <path
+                          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z">
+                        </path>
+                      </svg>
+                      <span class="text-medium">Work to get aligned.</span>
+                    </div>
+
+                    <span class="f5 color-fg-muted d-none d-sm-block">1m 36s</span>
+                  </li>
+
+                  <li
+                    class="mb-4 f4-mktg d-flex flex-items-center flex-justify-between js-build-in-item build-in-scale-fade">
+                    <div class="d-flex flex-items-center">
+                      <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                        data-view-component="true" class="octicon octicon-check-circle-fill color-fg-success mr-2">
+                        <path
+                          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z">
+                        </path>
+                      </svg>
+                      <span class="text-medium">Apply from recommendations.</span>
+                    </div>
+
+                    <span class="f5 color-fg-muted d-none d-sm-block">1m 36s</span>
+                  </li>
+                  <li
+                    class="mb-4 f4-mktg d-flex flex-items-center flex-justify-between js-build-in-item build-in-scale-fade">
+                    <div class="d-flex flex-items-center">
+                      <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                        data-view-component="true" class="octicon octicon-check-circle-fill color-fg-success mr-2">
+                        <path
+                          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z">
+                        </path>
+                      </svg>
+                      <span class="text-medium">Get Hired.</span>
+                    </div>
+
+                    <span class="f5 color-fg-muted d-none d-sm-block">1m 36s</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div data-target="card-skew.shine" class="position-absolute bottom-0 right-0 events-none z-n1"></div>
+        </div>
+      </card-skew>
+
+      <div class="d-flex js-build-in-trigger position-relative" data-build-in-stagger="100">
+        <div class="col-1 d-flex flex-column flex-items-center position-relative">
+          <div class="home-campaign-bit-line height-full position-relative z-1 js-build-in-item build-in-scale-top"
+            style="height: 100%;  background: linear-gradient(transparent, #33B3AE, #33B3AE, transparent);"></div>
+           
+         
+          <img alt="" aria-hidden="true" width="81" height="612"
+            style="left: calc(50% - 2px); height: auto; max-width: 9vw;"
+            class="d-none d-md-block position-absolute bottom-4 js-build-in-item build-in-scale-fade" loading="lazy"
+            decoding="async" src="https://bithub.bithubassets.com/assets/bit-branch-security-2-f6a799957581.svg" />
+        </div>
+
+        <div class="col-11 ml-2 ml-md-6">
+          <div
+            class="river-mktg js-build-in-trigger d-flex gutter gutter-spacious my-5 my-sm-7 my-md-8 position-relative flex-column-reverse flex-md-items-center flex-md-row flex-column pb-4 pb-md-7"
+            data-build-in-stagger="100">
+            <div class="col-12 py-3 mb-2 js-build-in-item col-sm-10 col-md-6 text-left col-lg-6 build-in-slideX-right">
+              <div class="pr-md-4">
+
+
+
+
+                <h2 class="color-fg-default mb-3 f2-mktg color-fg-muted">When your referred friend secures a job above 4
+                  LPA by us, you will earn 0.05% of their
+                  salary every month for 6 months as a<em> token of appreciation. </em>
+                  <br>
+                  <em>(Your email will be your Reffrel Code)</em>
+                </h2>
+
+
+
+              </div>
+            </div>
+
+
+          </div>
+          <div class="mb-6 mb-md-12 pb-3 js-build-in-trigger">
+            <div class="py-3 js-build-in-item col-sm-10 col-md-6 text-left col-lg-7 build-in-slideX-left">
+              <div class="gradient-border-mktg d-inline-block z-1 position-relative px-2 lh-condensed f6-mktg"
+                style="top: -1px">
+                <span class="text-gradient-mktg text-semibold">Did you know?</span>
+              </div>
+
+              <h3 class="text-accent-primary mb-2 mt-3 h1-mktg text-medium">Pay Only Upon Success </h3>
+              <p class="mb-3 f2-mktg text-medium col-6-max">When You get Job from us. then we will charge 
+                very small part of your salary <br> and <br>
+                It will be based on trust.  </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="vertical-line"></div>
+    </div>
+  </div>
+
+  <div class="home-campaign-footer position-relative js-section overflow-hidden" data-color-mode="dark"
+    data-light-theme="light" data-dark-theme="dark">
+
+
+    <div class="container-xl position-relative z-2 px-3">
+      <div class="d-flex js-build-in-trigger" data-build-in-stagger="100">
+        <div class="col-1 d-flex flex-column flex-items-center js-build-in-trigger">
+          <div class="home-campaign-bit-line rounded js-build-in-item build-in-scale-top"
+            style=" height: 66%; background: linear-gradient(transparent, #6639BA 10%, #A371F7, #D2A8FF);"></div>
+
+          <div class="mx-auto my-3 home-campaign-glowing-icon">
+            <div class="position-relative d-inline-block z-1">
+             
+              <img src="images/logo_top_weight.svg" width="24"  height="24" viewBox="0 0 24 24" aria-hidden="true"  alt="">
+              <span
+
+                class="position-absolute left-0 top-0 height-full width-full home-campaign-glowing-icon-glow z-n1"
+                style="background-color: var(--mktg-accent-primary); filter: blur(17px);"></span>
+                
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-11 ml-2 ml-md-0">
+          <div class="col-md-11 col-lg-9 py-8">
+            <h2 class="h2-mktg mb-5">Join Our Waiting list to get the priority access.
+
+            <p class="f3-mktg color-fg-muted">Whether you’re <br> (Working on a Company / Hiring For a Company),<br>  (finding a Company / Finding a Candidate),<br>  Starting your own startup 
+
+              <br>  or <br>  (looking for a compitative Package/looking for a best candidate) <br>  then this is a Right place. <br> Join Our Waiting list to get the priority access.
+
+            </p>
+          
+
+          <div class="pb-2">
+            <div class="d-flex flex-column flex-md-row">
+             
+                <div class="d-flex flex-column flex-md-row flex-items-center">
+                 
+
+                    <button class="btn-mktg width-full width-md-auto mb-3 mb-md-0 rounded-md-left-0 home-campaign-signup-button btn-signup-mktg" type="submit">
+                        <a href="wating_list.html" style="text-decoration: none; color: inherit;">Join a waiting list</a>
+                      </button>
+
+                </div>
+            </div>
+            
+</body>
+
+</html>

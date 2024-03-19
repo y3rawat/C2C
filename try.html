@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display IP Address</title>
+<style>
+  #ipAddress {
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+  }
+</style>
+</head>
+<body>
+<div id="ipAddress"></div>
+<script>
+  window.onload = function() {
+    // Fetch IP address using a third-party service
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        // Display IP address in the div element with id "ipAddress"
+        document.getElementById('ipAddress').textContent = "Your IP Address: " + data.ip;
+      })
+      .catch(error => {
+        console.error('Error fetching IP address:', error);
+      });
+  };
+</script>
+</body>
+</html>
