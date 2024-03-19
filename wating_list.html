@@ -63,6 +63,87 @@
 </head>
 
 <body>
+
+  
+  <script>
+    function redirectToClickHTML() {
+                      // Redirect to click.html
+                      window.location.href = 'index.html';
+                  }
+
+</script>
+  
+  <div class="form-container" >
+    <div class="bon" onclick="redirectToClickHTML()">
+      <div class="bx">H</div>
+      <div class="bx">O</div>
+      <div class="bx">M</div>
+      <div class="bx">E</div>
+      <div class="bx">:</div>
+  </div>
+      <style>
+  .bon {
+    display: flex;
+  }
+  
+  .bx {
+    width: 35px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ff0000;
+    transition: all .8s;
+    cursor: pointer;
+    position: relative;
+    background: rgba(255, 208, 0, 0.342);
+    overflow: hidden;
+  }
+  
+  .bx:before {
+    content: "H";
+    position: absolute;
+    top: 0;
+    background: #030303;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform .4s;
+  }
+  
+  .bx:nth-child(2)::before {
+    transform: translateY(-100%);
+    content: 'O';
+  }
+  
+  .bx:nth-child(3)::before {
+    content: 'M';
+  }
+  
+  .bx:nth-child(4)::before {
+    transform: translateY(-100%);
+    content: 'E';
+  }
+  
+  .bx:nth-child(5)::before {
+    content: ':(';
+  }
+  
+  .bon:hover .bx:before {
+    transform: translateY(0);
+  }
+  
+  
+  
+  
+      </style>
+
+      
   <div class="form-container" >
     <form id="myForm" >
       <div class="segment">

@@ -1,33 +1,3 @@
-<!-- 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Page</title>
-</head>
-<body>
-    <h1>Submitted Data</h1>
-    <p>Name: <span id="submittedName"></span></p>
-    <p>Email: <span id="submittedEmail"></span></p>
-
-    <script>
-        // Retrieve submitted data from local storage
-        const submittedName = localStorage.getItem('submittedName');
-        const submittedEmail = localStorage.getItem('submittedEmail');
-        
-        // Display submitted data
-        document.getElementById('submittedName').textContent = submittedName;
-        document.getElementById('submittedEmail').textContent = submittedEmail;
-    </script>
-</body>
-</html>
-
- -->
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +17,81 @@
 </head>
 <body>
     
+  <script>
+    function redirectToClickHTML() {
+                      // Redirect to click.html
+                      window.location.href = 'index.html';
+                  }
+
+</script>
+<div class="bon" onclick="redirectToClickHTML()">
+  <div class="bx">H</div>
+  <div class="bx">O</div>
+  <div class="bx">M</div>
+  <div class="bx">E</div>
+  <div class="bx">:</div>
+</div>
+  <style>
+.bon {
+display: flex;
+}
+
+.bx {
+width: 35px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 15px;
+font-weight: 700;
+color: #ff0000;
+transition: all .8s;
+cursor: pointer;
+position: relative;
+background: rgba(255, 208, 0, 0.549);
+overflow: hidden;
+}
+
+.bx:before {
+content: "H";
+position: absolute;
+top: 0;
+background: #0f0f0f;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: translateY(100%);
+transition: transform .4s;
+}
+
+.bx:nth-child(2)::before {
+transform: translateY(-100%);
+content: 'O';
+}
+
+.bx:nth-child(3)::before {
+content: 'M';
+}
+
+.bx:nth-child(4)::before {
+transform: translateY(-100%);
+content: 'E';
+}
+
+.bx:nth-child(5)::before {
+content: ':(';
+}
+
+.bon:hover .bx:before {
+transform: translateY(0);
+}
+
+
+
+
+  </style>
   <!-- Your form -->
   <form id="myForm">
 
