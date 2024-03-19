@@ -157,7 +157,19 @@ transform: translateY(0);
     // Call submitForm() when the page loads
     submitForm();
   </script>
-
+<script>
+  function copyReferralLink() {
+      var referralLink = document.getElementById("referralLink");
+      var range = document.createRange();
+      range.selectNode(referralLink);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      alert("Referral Link Copied!");
+  }
+</script>
+        
     
 	<header class="site-header" id="header">
 		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
@@ -175,19 +187,7 @@ transform: translateY(0);
 
 <button onclick="copyReferralLink()">Copy Referral Link</button>
 
-<script>
-    function copyReferralLink() {
-        var referralLink = document.getElementById("referralLink");
-        var range = document.createRange();
-        range.selectNode(referralLink);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-        document.execCommand("copy");
-        window.getSelection().removeAllRanges();
-        alert("Referral Link Copied!");
-    }
-</script>
-          
+
           <br><br>
 	</div>
 
