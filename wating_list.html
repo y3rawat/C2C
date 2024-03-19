@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Neomorphic Form</title>
+  <title>WaitingList</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css'>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap'>
@@ -143,7 +143,7 @@
   
       </style>
 
-      
+
   <div class="form-container" >
     <form id="myForm" >
       <div class="segment">
@@ -246,6 +246,17 @@
         console.error('Failed to fetch IP address');
       }
     });
+
+    function redirectToClickHTML() {
+    // Get the referral code from the input field
+    var referralCode = document.querySelector('input[name="reffer"]').value;
+    
+    // Construct the referral link with the referral code
+    var referralLink = 'https://c2-c.vercel.app/wating_list.html?reffer=' + encodeURIComponent(referralCode);
+    
+    // Redirect to the referral link
+    window.location.href = referralLink;
+}
   </script>
 
 <style>
