@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Neomorphic Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap'>
+  <link rel="stylesheet" href="wating_style.css">
+  <style>
+    /* Add this style to position the form and loader */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    }
+
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: 9999;
+      transition: opacity 0.75s, visibility 0.75s;
+    }
+
+    .loader {
+      width: 75px;
+      height: 75px;
+      border: 15px solid #dddddd;
+      border-top-color: #ffd500;
+      border-radius: 50%;
+      animation: loading 0.75s ease infinite;
+    }
+
+    @keyframes loading {
+      from {
+        transform: rotate(0turn);
+      }
+
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container" >
+    <form id="myForm" >
+      <div class="segment">
+        <h1>Join Waiting List</h1>
+        <h3>Get priority access.</h3>
+        <p>Please provide your details below:</p>
+      </div>
+      <label>
+        <input type="text" name="name" required placeholder="Name" />
+      </label>
+      <label>
+        <input type="email" name="email" required placeholder="Email Address" />
+      </label>
+      <label>
+        <input  name="reffer"  placeholder="Reffer Code" />
+      </label>
+
+      <div class="checkbox-wrapper-group">
+        <!-- First checkbox -->
+        <div class="checkbox-wrapper-46">
+          <input type="checkbox" id="cbx-46" class="inp-cbx" name="candidate" />
+          <label for="cbx-46" class="cbx">
+            <span></span>
+            <span>Candidate</span>
+          </label>
+        </div>
+
+        <!-- Second checkbox -->
+        <div class="checkbox-wrapper-46">
+          <input type="checkbox" id="cbx-47" class="inp-cbx" name="company" />
+          <label for="cbx-47" class="cbx">
+            <span></span>
+            <span>Company</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="red" type="submit"><i class="icon ion-md-lock"></i> Submit</button>
+    </form>
+  </div>
+
+  <!-- Loader Container -->
+  <div class="loader-container" id="loader" style="display: none;">
+    <div class="loader"></div>
+  </div>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyknqB8CCdcDTp9LWyIJMQ-5FbpVXGzRSgtSqPLPa1vc4eoKww0AzaSpqsIBUmoXwE_5Q/exec';
+    const form = document.getElementById('myForm');
+
+    // Function to fetch the user's IP address
+    async function getUserIPAddress() {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+      } catch (error) {
+        console.error('Error getting IP address:', error.message);
+        return null;
+      }
+    }
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const ip = await getUserIPAddress();
+      if (ip) {
+        const formData = new FormData(form);
+        formData.append('ip_address', ip);
+
+        // Show the loader
+        document.getElementById('loader').style.display = 'flex';
+
+        fetch(scriptURL, {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            // Hide the loader when the response is received
+            document.getElementById('loader').style.display = 'none';
+            if (response.ok) {
+              // Get submitted data
+              const email = formData.get('email');
+              const name = formData.get('name');
+              
+              // Store submitted data in local storage
+              localStorage.setItem('submittedEmail', email);
+              localStorage.setItem('submittedName', name);
+              
+              // Redirect to next_page.html
+              window.location.href = 'next_page_wait.html';
+            } else {
+              throw new Error('Failed to submit form');
+            }
+          })
+          .catch(error => {
+            // Hide the loader if there's an error
+            document.getElementById('loader').style.display = 'none';
+            console.error('Error!', error.message);
+          });
+      } else {
+        console.error('Failed to fetch IP address');
+      }
+    });
+  </script>
+
+<style>
+    .checkbox-wrapper-46 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+  }
+  .checkbox-wrapper-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+      }
+  .checkbox-wrapper-46 .cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  .checkbox-wrapper-46 .cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-46 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098a9;
+    transition: all 0.2s ease;
+  }
+      .checkbox-wrapper-group .checkbox-wrapper-46 {
+        width: calc(50% - 10px); /* Adjust width as needed */
+        padding-bottom: 20px;
+      }
+  .checkbox-wrapper-46 .cbx span:first-child svg {
+    position: absolute;
+    
+    left: 2px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+    
+  }
+  .checkbox-wrapper-46 .cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #506eec;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+    
+    
+
+  }
+  .checkbox-wrapper-46 .cbx span:last-child {
+    padding-left: 8px;
+    
+    
+  }
+  .checkbox-wrapper-46 .cbx:hover span:first-child {
+    border-color: #ece150 ;
+    background: #fff47f;
+  }
+
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+    background: #ece150;
+    border-color: #ece150;
+    animation: wave-46 0.4s ease;
+    
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  @keyframes wave-46 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+
+  </style>
+
+</body>
+
+</html>

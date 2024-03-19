@@ -1,0 +1,329 @@
+
+/* --------------------- */
+/* Try Superlist */
+
+.try-superlist-clicked-state {
+	transform: rotate(0deg) !important;
+  margin-top: 40px;
+}
+
+.try-superlist-clicked-state:hover {
+	transform: rotate(0deg) !important;
+  margin-top: 40px;
+}
+
+
+/* --------------------- */
+/* Doodle under the Logo */
+
+.logo-doodle path {
+  stroke-dasharray: 1000;    
+  stroke-dashoffset: 1000;   
+  animation: draw 0.7s ease-in forwards; 
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.super-svg, .list-svg {
+	position: absolute;
+}
+
+.super-svg {
+	width: 92px;
+  bottom: -16px;
+  left: -13px;
+  z-index: 1;
+}
+
+.list-svg {
+	width: 75px;
+  right: -20px;
+  bottom: -18px;
+}
+
+@media (max-width: 480px) {
+
+	.super-svg {
+    width: 73px;
+    bottom: -15px;
+    left: -8px;
+    z-index: 1;
+  }
+
+  .list-svg {
+    width: 63px;
+    right: -14px;
+    bottom: -16px;
+  }
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.superlist-doodle {
+	width: 111%;
+	position: absolute;
+  left: -14px;
+  bottom: -25px;
+}
+
+  @media (max-width: 1000px) {
+    .superlist-doodle {
+      left: -12px;
+      bottom: -22px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .superlist-doodle {
+      left: -10px;
+      bottom: -20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .superlist-doodle {
+      left: -8px;
+      bottom: -18px;
+    }
+  }
+
+.superlist-doodle path {
+  stroke-dasharray: 1000;    
+  stroke-dashoffset: 1000;   
+  animation: draw 0.7s ease-in forwards; 
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* --------------------- */
+/* App Body */
+
+.s23-app-body {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.s23-app-body.hidden {
+  opacity: 0;
+  transform: translateY(20px); 
+  pointer-events: none;
+}
+
+
+/* Default styling for all use-case buttons */
+
+.s23-usecase-button {
+  color: #72718a;
+  border: 2px solid rgba(108, 108, 158, 0.15);
+}
+
+/* Specific styles for each use case */
+
+.app-launch {
+  color: #2590F2 !important;
+  border: 2px solid #2590F2 !important;
+}
+.app-launch:hover {
+  color: #2590F2 !important;
+  border: 2px solid #2590F2 !important;
+}
+
+.kitchen-reno {
+  color: #FFC700;
+  border: 2px solid #FFC700;
+}
+
+.kitchen-reno:hover {
+  color: #FFC700 !important;
+  border: 2px solid #FFC700 !important;
+}
+
+.daily-habits {
+  color: #2A966F;
+  border: 2px solid #2A966F;
+}
+
+.daily-habits:hover {
+  color: #2A966F !important;
+  border: 2px solid #2A966F !important;
+}
+
+
+.s23-dreamscape {
+  transition: opacity 0.2s ease;
+  opacity: 1;
+}
+
+[contenteditable]:focus {
+  outline: none;
+}
+
+.check-active {
+background-color: #FFC700;
+border-color: #FFC700;
+}
+
+.strokethrough-active {
+width: 104%;
+}
+
+.text-active {
+color: #72718A;
+}
+
+
+@media (max-width: 480px) {
+  .ellipsis {
+    white-space: nowrap;     
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+    max-width: 200px;
+  }
+}
+
+.s23-app-checkbox img:hover {
+  filter: invert(20%); 
+}
+
+.check-active img:hover {
+  filter: invert(0%); 
+}
+
+.s23-app {
+	scroll-behavior: smooth;
+}
+
+/* --------------------- */
+/* Pitch Deck */
+
+.s23-slide-invisible {
+	opacity: 1 !important;
+}
+
+.slide-visible {
+	opacity: 1 !important;
+}
+
+@media (max-width: 480px) {
+	.s23-slide-invisible {
+		opacity: 1 !important;
+	}
+}
+
+.outer-container-in-view {
+  opacity: 1 !important;
+}
+
+.pitch-slide-in-view {
+  background-color: #FDFAF3 !important;
+  width: 95% !important;
+  height: 90vh !important;
+  border-radius: 80px !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 480px) {
+	.pitch-slide-in-view {
+  	border-radius: 40px !important;
+  }
+}
+
+.s23-pitchdeck-outer-container {
+	scroll-snap-type: y mandatory;
+}
+
+.s23-pitchdeck-slide-outer {
+	scroll-snap-align: start;
+}
+
+/* --------------------- */
+/* App Video */
+
+video {
+	width: 100% !important;
+}
+
+.s23-app-video {
+	border-radius: 20px;
+}
+
+.s23-video-growing-timeline {
+	transition: width 0.3s ease-out;
+}
+
+/* --------------------- */
+/* Animations */
+
+@keyframes bounceScale {
+  0%   { transform: scale(1); }    
+  25%  { transform: scale(1.2); }  
+  50%  { transform: scale(0.9); }  
+  75%  { transform: scale(1.1); }  
+  100% { transform: scale(1); }    
+}
+
+.bounce-effect:hover {
+  animation: bounceScale 2s infinite; 
+}
+
+.snappy-animation {
+	transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
+}
+
+/* --------------------- */
+/* Full Screen moments */
+
+.first-slide-fullscreen {
+	width: 100%;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.darkModeFullScreen {
+	width: 100%;
+  border-radius: 0;
+  margin-top: 0;
+  padding-top: 13vh;
+}
+
+/* --------------------- */
+/* Laundry List */
+
+.s23-laundry-row-title:hover {
+  opacity: 1 !important;  /* The !important ensures it overrides the inline style set by JavaScript */
+}
+
+.s23-laundry-row-details {
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+
+.s23-laundry-row:hover .s23-laundry-row-details {
+    opacity: 1; 
+}
+
+.s23-laundry-row:hover .s23-laundry-row-title {
+    color: #FFC700;
+		opacity: 1 !important; 
+}
+
+/* --------------------- */
+/* Performance Optimizations */
+
+img.image-9 {
+    width: 100%;
+}
+
+img.s23-tiny-checkmark {
+    width: 12px;
+}

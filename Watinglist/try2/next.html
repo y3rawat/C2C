@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Next Page</title>
+</head>
+<body>
+<h1>Form Data</h1>
+<div id="formData"></div>
+
+<script>
+// Function to get URL parameters
+function getParams() {
+  const params = new URLSearchParams(window.location.search);
+  const formData = {};
+
+  for (const [key, value] of params.entries()) {
+    formData[key] = value;
+  }
+
+  return formData;
+}
+
+// Function to display form data
+function displayFormData() {
+  const formData = getParams();
+  const formDataDiv = document.getElementById('formData');
+
+  for (const key in formData) {
+    formDataDiv.innerHTML += `<p><strong>${key}:</strong> ${formData[key]}</p>`;
+  }
+
+  // Append hidden input fields for IP address and location
+  const ipAddress = sessionStorage.getItem('ipAddress');
+  const location = sessionStorage.getItem('location');
+  formDataDiv.innerHTML += `<input type="hidden" name="ipAddress" value="${ipAddress}">`;
+  formDataDiv.innerHTML += `<input type="hidden" name="location" value="${location}">`;
+
+  // Submit the form automatically
+  document.getElementById('myForm').submit();
+}
+
+// Call the function to display form data when the page loads
+displayFormData();
+</script>
+
+<!-- Form -->
+<form id="myForm" action="https://script.google.com/macros/s/AKfycbxz1SEybATVeA4wOc-cDV7rcBUpvBZQxRDmWUfwp_DyO2q0fFAg4BGYMidQX_yoHQl8vg/exec" method="post">
+  <!-- Your form elements go here -->
+  <!-- Example: -->
+  <!-- <input type="text" name="name" placeholder="Name"> -->
+  <!-- <input type="email" name="email" placeholder="Email"> -->
+  <!-- <input type="submit" value="Submit"> -->
+</form>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Slider</title>
+  <style>
+    #slider {
+      height: 300px; /* Set the height to accommodate the content */
+      display: flex;
+      flex-direction: column; /* Change to stack items vertically */
+      align-items: center; /* Center align the content vertically */
+      font-size: 30px;
+    }
+
+    #sliderValue {
+      display: flex;
+      flex-wrap: wrap;
+      color: #0077ee;
+      font-weight: 700;
+    }
+
+    .start {
+      opacity: 0;
+    }
+
+    .animation {
+      animation: fade .3s forwards;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Change translateY to move vertically */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px); /* Change translateY to move vertically */
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="slider">
+      <div class="span">We excel at</div>
+      <div class="span" id="sliderValue"></div>
+    </div>
+
+  <script>
+    var sliderCounter = 0;
+    var sliderContent = [
+      "Web Development",
+      "WordPress Development",
+      "App Development",
+      "Plugin Development",
+      "CRM Integrations"
+    ];
+    var sliderValue = document.querySelector("#sliderValue");
+
+    function slide() {
+      if (sliderCounter >= sliderContent.length) {
+        sliderCounter = 0;
+      }
+
+      sliderValue.innerHTML = "";
+
+      for (var i = 0; i < sliderContent[sliderCounter].length; i++) {
+        let letterDiv = document.createElement("div");
+        letterDiv.innerHTML = sliderContent[sliderCounter][i];
+
+        if (letterDiv.innerHTML == " ") {
+          letterDiv.innerHTML = "&nbsp;";
+        }
+        letterDiv.classList.add("start");
+        letterDiv.classList.add("animation");
+        letterDiv.style.animationDelay = i / 10 + "s";
+        sliderValue.appendChild(letterDiv);
+      }
+
+      sliderCounter++;
+    }
+
+    slide();
+    setInterval(slide, 4000);
+  </script>
+</body>
+</html>

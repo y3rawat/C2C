@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello Page</title>
+<style>
+  /* Initially hide the "get" element */
+  #get {
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Smooth opacity transition */
+  }
+  
+  /* Add different color for removed elements */
+  .removed {
+    color: red;
+  }
+</style>
+</head>
+<body>
+  <div id="hello">Hello, there!</div>
+  <div id="get">get</div>
+
+<script>
+  // Function to toggle the visibility and text after 1 second
+  setTimeout(function() {
+    // Hide the "get" element smoothly by changing its opacity
+    document.getElementById('get').style.opacity = '0';
+    
+    // Change the text and style of the "hello" element after the animation completes
+    setTimeout(function() {
+      // Change the text
+      document.getElementById('hello').innerText = 'Hello, why are you here?';
+      
+      // Add a class to style the removed element differently
+      document.getElementById('get').classList.add('removed');
+    }, 500); // Wait for 0.5 seconds for the transition to complete
+  }, 1000); // 1000 milliseconds = 1 second
+</script>
+</body>
+</html>

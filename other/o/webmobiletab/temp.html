@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Redirect</title>
+    <script>
+        // Function to detect mobile device
+        function isMobileDevice() {
+            return (/Mobi|Android/i.test(navigator.userAgent));
+        }
+
+        // Function to redirect based on device type
+        function redirectBasedOnDevice() {
+            if (isMobileDevice()) {
+                window.location = 'c.html'; // Redirect to mobile page
+            } else if (window.innerWidth <= 768) { // Assuming tablets have max-width of 768px
+                window.location = 'b.html'; // Redirect to tablet page
+            } else {
+                window.location = 'a.html'; // Redirect to web page
+            }
+        }
+
+        // Redirect on page load
+        redirectBasedOnDevice();
+    </script>
+</head>
+<body>
+    <p>Loading...</p>
+</body>
+</html>

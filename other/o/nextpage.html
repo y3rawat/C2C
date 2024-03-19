@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Page</title>
+<script>
+// Function to extract IP address from URL query parameter
+function getIPAddressFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('ip');
+}
+
+// Function to fetch location information from ip-api.com API
+function getLocationFromIP(ipAddress) {
+    // Make a request to ip-api.com API
+    fetch('http://ip-api.com/json/' + ipAddress)
+        .then(response => response.json())
+        .then(data => {
+            // Extract and display location information
+            const city = data.city;
+            const region = data.regionName;
+            const country = data.country;
+            const locationString = city + ', ' + region + ', ' + country;
+            document.getElementById('location').textContent = locationString;
+        })
+        .catch(error => console.error('Error fetching location:', error));
+}
+
+// Get the IP address from the URL and display it
+document.addEventListener('DOMContentLoaded', function() {
+    const ipAddress = getIPAddressFromURL();
+    document.getElementById('ip-address').textContent = ipAddress;
+    getLocationFromIP(ipAddress); // Fetch location information
+});
+</script>
+</head>
+<body>
+
+<h2>Your IP address:</h2>
+<p id="ip-address"></p>
+
+<h2>Your Location:</h2>
+<p id="location"></p>
+
+</body>
+</html>

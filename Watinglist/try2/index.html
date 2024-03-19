@@ -1,0 +1,205 @@
+  <!DOCTYPE html>
+  <html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>CodePen - Neomorphic Form</title>
+    <link rel='stylesheet' href='https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+  <!-- partial:index.partial.html -->
+
+
+  <style>
+    .checkbox-wrapper-46 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+  }
+  .checkbox-wrapper-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+      }
+  .checkbox-wrapper-46 .cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  .checkbox-wrapper-46 .cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-46 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098a9;
+    transition: all 0.2s ease;
+  }
+      .checkbox-wrapper-group .checkbox-wrapper-46 {
+        width: calc(50% - 10px); /* Adjust width as needed */
+        padding-bottom: 20px;
+      }
+  .checkbox-wrapper-46 .cbx span:first-child svg {
+    position: absolute;
+    
+    left: 2px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+    
+  }
+  .checkbox-wrapper-46 .cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #506eec;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+    
+    
+
+  }
+  .checkbox-wrapper-46 .cbx span:last-child {
+    padding-left: 8px;
+    
+    
+  }
+  .checkbox-wrapper-46 .cbx:hover span:first-child {
+    border-color: #506eec;
+  }
+
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+    background: #506eec;
+    border-color: #506eec;
+    animation: wave-46 0.4s ease;
+    
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  @keyframes wave-46 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+
+  </style>
+
+
+
+<form id="myForm">
+  <div class="segment">
+    <h1>Join Waiting List</h1>
+    <h3>Get priority access.</h3>
+    <p>Please provide your details below:</p>
+  </div>
+  <label>
+    <input type="Name" name="name" placeholder="Name" />
+  </label>
+  <label>
+    <input type="Email" name="email" placeholder="Email Address" />
+  </label>
+
+  <div class="checkbox-wrapper-group">
+    <!-- First checkbox -->
+    <div class="checkbox-wrapper-46">
+      <input type="checkbox" id="cbx-46" class="inp-cbx" name="candidate" />
+      <label for="cbx-46" class="cbx">
+        <span></span>
+        <span>Candidate</span>
+      </label>
+    </div>
+
+    <!-- Second checkbox -->
+    <div class="checkbox-wrapper-46">
+      <input type="checkbox" id="cbx-47" class="inp-cbx" name="company" />
+      <label for="cbx-47" class="cbx">
+        <span></span>
+        <span>Company</span>
+      </label>
+    </div>
+  </div>
+
+  <button class="red" type="submit"><i class="icon ion-md-lock"></i> Submit</button>
+</form>
+
+<div id="loader" style="display: none;">
+  <div class="loader"></div>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyAB0vnoCYUekTyRPF0os6EcYBuLKBMXiHhJ7r9VktWwxGVLpuryMss-E0Upojs2UsKPw/exec';
+  const form = document.getElementById('myForm');
+
+  // Function to fetch the user's IP address
+  async function getUserIPAddress() {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      return data.ip;
+    } catch (error) {
+      console.error('Error getting IP address:', error.message);
+      return null;
+    }
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const ip = await getUserIPAddress();
+    if (ip) {
+      const formData = new FormData(form);
+      formData.append('ip_address', ip);
+
+      // Show the loader
+      document.getElementById('loader').style.display = 'block';
+
+      fetch(scriptURL, {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          // Hide the loader when the response is received
+          document.getElementById('loader').style.display = 'none';
+          if (response.ok) {
+            alert("Thank you! Your form is submitted successfully.");
+            form.reset();
+          } else {
+            throw new Error('Failed to submit form');
+          }
+        })
+        .catch(error => {
+          // Hide the loader if there's an error
+          document.getElementById('loader').style.display = 'none';
+          console.error('Error!', error.message);
+        });
+    } else {
+      console.error('Failed to fetch IP address');
+    }
+  });
+</script>
+
+</body>
+</html>
