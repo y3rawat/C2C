@@ -154,6 +154,53 @@
 
 
 
+
+<style>
+  button {
+    cursor: pointer;
+font-weight: 700;
+font-family: Helvetica, "sans-serif";
+transition: all .2s;
+padding: 10px 20px;
+border-radius: 100px;
+background: #efcb00;
+border: 1px solid transparent;
+display: flex;
+align-items: center;
+font-size: 15px;
+position: fixed; /* Change 'relative' to 'fixed' */
+top: 20px; /* Adjust as needed */
+right: 20px; /* Adjust as needed */
+z-index: 9999;
+
+}
+
+button:hover {
+  background: #ffe81c;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+</style>
+
+
+
+
+
+
     <div class="position-relative js-header-wrapper ">
 
 
@@ -173,6 +220,15 @@
 
 
 
+
+              <button >
+                <a href="wating_list.html" style="text-decoration: none; color: inherit;">Join Now!</a>
+                <svg width="14" height="24" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+                    <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+                </svg>
+              </button>
+              
 
 
 
@@ -201,13 +257,18 @@
         </div>
 
         <div class="px-3 home-campaign-hero">
-          <div class="position-relative pt-100 pt-sm-1 pt-lg-2 container-xl js-build-in-trigger" data-hpc>
+          
+          <div class="position-relative pt-90 pt-sm-1 pt-lg-2 container-xl js-build-in-trigger" data-hpc>
             <div class="d-flex pt-sm-1">
+              
               <div class="col-1 d-flex flex-column events-none position-relative">
                 <div class="mx-auto">
-                  <div class=" circle p-1" style="border: 3px solid rgb(255, 200, 0);"></div>
+                  <img src="images/logo_top_weight.svg" aria-hidden="true" height="34" viewBox="0 0 24 24" version="1.1" width="34">
+                  
+                  
+                
                 </div>
-                <div style="background: linear-gradient(transparent, #ffea72 30%); height: 82%"
+                <div style="background: linear-gradient(transparent, #ffd900 30%); height: 182px"
                   class="home-campaign-bit-line rounded mx-auto">
 
                   <div class="mx-auto my-3 home-campaign-glowing-icon">
@@ -231,14 +292,15 @@
 
                 <style>
                   #slider {
-
-                    width: 400px;
+                  
+                    width: 600px;
                     display: flex;
                     gap: 10px;
-                    font-size: 20px;
-                    margin-top: -90px;
+                    font-size: 35px;
+                    margin-top: -180px;
                     margin-left: -30px;
-
+                    padding-right: 7px;
+                    
                   }
 
 
@@ -247,12 +309,13 @@
 
                   #sliderValue {
                     display: flex;
-
+                    padding-left:20px ;
+                    padding-bottom: 40px;
                     color: #ffbf00;
-                    font-weight: 10;
+                    font-size: 60px;
                     font-weight: bold;
                     /* Set font-weight to bold */
-
+                    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                   }
 
                   .start {
@@ -281,6 +344,7 @@
                     animation: holder 4s;
                   }
 
+
                   @keyframes holder {
                     0% {
                       opacity: 1;
@@ -298,18 +362,19 @@
 
 
                 <div id="slider">
-                  <div class="span"> We will find a right </div>
+                  <div class="span"> Let's Connect with a Right </div>
 
-                  <div class="span" id="sliderValue"></div>
+                  
                 </div>
+                <div class="slid" id="sliderValue"></div>
 
 
 
                 <script>
                   var sliderCounter = 0;
                   var sliderContent = [
-                    "Company for you",
-                    "Candidate for you"
+                    "Companys",
+                    "Candidates"
                   ];
                   var sliderValue = document.querySelector("#sliderValue");
 
@@ -343,10 +408,7 @@
 
                 </script>
 
-                <p class="f2-mktg text-normal color-fg-muted mb-3 mb-md-10 position-relative z-1">
-                  Join Our Waiting list to get the priority access.
-
-                </p>
+                
 
                 <div class="d-flex flex-column flex-md-row">
                   <!-- '"` --><!-- </textarea></xmp> --></option>
@@ -361,22 +423,47 @@
 
                           margin-left: 90px;
                           margin-top: -80px;
-                        }
+                        }.who {
+
+                          margin-left: 90px;
+                          margin-top: 60px;
+                          }
+                          .colr{
+                            color: #00bec1;
+                          }
+                          .cor{
+                            color: #d9bdff;
+                          }
+                          .cr{
+                            color: #00a6ff;
+                          }
                       </style>
 
 
                      
 
-                      <input type="hidden" name="source" value="form-home-signup">
-
-                      <button class="btn-mktg width-full width-md-auto mb-3 mb-md-0 rounded-md-left-0 home-campaign-signup-button btn-signup-mktg" type="submit">
-                        <a href="wating_list.html" style="text-decoration: none; color: inherit;">Join a waiting list</a>
-                      </button>
                     </div>
                 </div>
+                <div class="col-11 col-lg-8 ml-2 ml-md-0 mb-6 mb-md-10 who">
+
+
+                  <h2 class="h4-mktg mb-4 text-medium bb">Who We are :</h2>
+                 
+                  <h2 class="colr mb-3 f2-mktg ">
+                    We are talent matchmakers Who is Creating a platform where we will link candidates with like-minded companies.  Our mission is to shake up hiring by valuing potential, skills, and culture fit above all. </h2>
+                    <h2 class="cor mb-3 f2-mktg "> 
+                      We empower both candidates and companies to find their perfect match for success and growth</h2>
+
+
+                  
+                 
+                </div>
               </div>
+              
             </div>
+            
           </div>
+          
         </div>
 
 
@@ -407,9 +494,26 @@
 
                 <h2 class="h5-mktg mb-4 text-medium">For Candidates</h2>
                 <h3 class="h3-mktg mb-4 text-medium">
-                  <span class="text-accent-primary d-block">Role Recommender System </span>
-                  LLM Based Job Recommender from Soft and Hard Skills.
-                </h3>
+                  <h2 class="h4-mktg mb-4 text-medium bb">Who Can Join Us :</h2>
+                 
+                  <span class="colr mb-3 f2-mktg ">
+                     New Carrer</span>
+                     <p>Our platform provides a comprehensive suite of resources and tools designed specifically for individuals starting their careers. we empower candidates to navigate the initial stages of their professional journey with confidence and clarity.</p>
+                     <span class="ba mb-3 f2-mktg ">
+                      Change Profession</span>
+                      <p>Looking to switch careers? Our platform not only guides you through this transition but also ensures you're rewarded with a competitive salary that reflects your worth. With us, your career change isn't just about a new path—it's about securing a rewarding future.</p>
+                      <span class="cr mb-3 f2-mktg ">
+                        Compitative Salary</span>
+                        <p>Our platform not only supports your transition to a new profession but also guarantees a competitive salary that values your skills and experience. Make the switch with confidence and secure a rewarding paycheck that matches your ambition.</p>
+                        
+                        <br>
+                        <h3 class="h4-mktg mb-4 text-medium bb">
+                          What we are designing:</h3>
+                        
+                 <h2 class="text-accent-primary d-block">Role Recommender System </h2>
+                    <p> LLM Based Job Recommender from Soft and Hard Skills.</p>
+                   
+               
               </div>
 
 
@@ -534,6 +638,7 @@
               }
             </style>
             <div class="vertical-line"></div>
+            
 
             <div class="home-campaign-bit-line height-full rounded js-build-in-item build-in-scale-top"
               style="background: linear-gradient(#3FB950, #ffd500, transparent);" data-build-delay="500">
@@ -548,17 +653,17 @@
             <h3 class="h3-mktg mb-4 text-medium">
               <style>
                 .text-accent-primary1 {
-                  color: #eed200;
+                  color: #ddc300;
                 
                 }
                 .bl{
-                    color: #00eee2;
+                    color: #02cfc5;
                 }
                 .ba{
-                    color: #ffff00;
+                    color: #c6c600;
                 }
                 .bb{
-                    color: #ff8400;
+                    color: #bc6201;
                 }
               </style>
               <span class="text-accent-primary1 d-block">Strategic Candidate Selection System.</span>
