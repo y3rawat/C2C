@@ -1,7 +1,3 @@
-
-/* --------------------- */
-/* Try Superlist */
-
 .try-superlist-clicked-state {
 	transform: rotate(0deg) !important;
   margin-top: 40px;
@@ -78,19 +74,6 @@
     }
   }
   
-  @media (max-width: 800px) {
-    .superlist-doodle {
-      left: -10px;
-      bottom: -20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .superlist-doodle {
-      left: -8px;
-      bottom: -18px;
-    }
-  }
 
 .superlist-doodle path {
   stroke-dasharray: 1000;    
@@ -182,14 +165,6 @@ color: #72718A;
 }
 
 
-@media (max-width: 480px) {
-  .ellipsis {
-    white-space: nowrap;     
-    overflow: hidden;        
-    text-overflow: ellipsis;  
-    max-width: 200px;
-  }
-}
 
 .s23-app-checkbox img:hover {
   filter: invert(20%); 
@@ -212,12 +187,6 @@ color: #72718A;
 
 .slide-visible {
 	opacity: 1 !important;
-}
-
-@media (max-width: 480px) {
-	.s23-slide-invisible {
-		opacity: 1 !important;
-	}
 }
 
 .outer-container-in-view {
