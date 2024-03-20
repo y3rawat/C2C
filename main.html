@@ -120,7 +120,7 @@
   </script>
 
     <div class="s23-header">
-        <img class="s23-superlist-logo-link"  width="200" src="images/logoBlack.svg" alt="logo">
+        <img class="s23-superlist-logo-link"  width="200" src="images/Logo copy.svg" alt="logo">
         <body class="s23-body">
         <div class="s23-try-superlist-container">
             <div class="s23-collapsed-container withsound" onclick="redirectToClickHTML()">
@@ -319,10 +319,9 @@
 <style>
 
     .radio-inputs {
-        right: 35%;
-        top: 4%;
+       
         /* left: 50%; */
-        position: fixed;
+        position: center;
         display: flex;
         flex-wrap: wrap;
         justify-content: center; /* Align items horizontally at the center */
@@ -334,14 +333,18 @@
         padding: 0.25rem;
         width: 450px;
         font-size: 14px;
-        margin: 0 auto; /* Center along the x-axis */
+        margin: 40px auto 0; /* 20px top margin, center horizontally */
+
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        justify-content: center;
         
     }
 
     .radio-inputs .radio {
         flex: 1 1 auto;
         text-align: center;
+        
+
         
     }
 
@@ -381,6 +384,14 @@
         height: auto;
         
     }
+    @media only screen and (max-width: 768px) {
+    /* Hide Candidate and Company options on mobile */
+    .radio-inputs label:nth-child(2),
+    .radio-inputs label:nth-child(3) {
+        display: none;
+    }
+}
+
 </style>
 
 <div class="radio-inputs">
@@ -401,6 +412,7 @@
         <span class="name">Join Us</span>
     </label>
 </div>
+
 
 <div id="svg-container">
     <img id="svg-image" src="images/Webview.svg" alt="SVG Image">
