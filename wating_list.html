@@ -185,7 +185,7 @@
         </div>
       </div>
       <p  style="color: red; ">Please select at least one checkbox.</p>
-      <button class="red" type="submit" disabled ><i class="icon ion-md-lock"></i> Submit</button>
+      <button class="red" type="submit" ><i class="icon ion-md-lock"></i> Submit</button>
     </form>
   </div>
 
@@ -194,32 +194,6 @@
     <div class="loader"></div>
   </div>
   
-  <script>
-    // jQuery code to enable/disable submit button based on checkbox selection
-    $(document).ready(function() {
-      // Function to check if at least one checkbox is checked
-      function isAtLeastOneCheckboxChecked() {
-        return $('input[type="checkbox"]:checked').length > 0;
-      }
-
-      // Function to enable/disable submit button
-      function toggleSubmitButton() {
-        if (isAtLeastOneCheckboxChecked()) {
-          $('#submitBtn').removeAttr('disabled').removeClass('disabled');
-        } else {
-          $('#submitBtn').attr('disabled', 'disabled').addClass('disabled');
-        }
-      }
-
-      // Call the toggleSubmitButton function initially
-      toggleSubmitButton();
-
-      // Call the toggleSubmitButton function whenever a checkbox is clicked
-      $('input[type="checkbox"]').click(function() {
-        toggleSubmitButton();
-      });
-    });
-  </script>
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyknqB8CCdcDTp9LWyIJMQ-5FbpVXGzRSgtSqPLPa1vc4eoKww0AzaSpqsIBUmoXwE_5Q/exec';
     const form = document.getElementById('myForm');
