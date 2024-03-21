@@ -2721,7 +2721,7 @@
 
 @font-face {
     font-family: "Mona Sans";
-    src: url("/assets/mona-sans-d1bf285e9b9b.woff2") format("woff2 supports variations"), url("/assets/mona-sans-d1bf285e9b9b.woff2") format("woff2-variations");
+    src: url("mona-sans-d1bf285e9b9b.woff2") format("woff2 supports variations"), url("mona-sans-d1bf285e9b9b.woff2") format("woff2-variations");
     font-weight: 200 900;
     font-stretch: 75% 125%;
     font-display: swap
