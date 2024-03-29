@@ -97,23 +97,7 @@
                     p(e) || g(w(S(e), t))
                 } else p(e) || g(w(S(e), t))
             }
-            async function g(e) {
-                if (!(!E && !f && d < 10 && (0, o.Gb)())) return;
-                let t = document.head?.querySelector('meta[name="browser-errors-url"]')?.content;
-                if (t) {
-                    if (e.error.stacktrace.some(e => b.test(e.filename) || b.test(e.function))) {
-                        f = !0;
-                        return
-                    }
-                    d++;
-                    try {
-                        await fetch(t, {
-                            method: "post",
-                            body: JSON.stringify(e)
-                        })
-                    } catch {}
-                }
-            }
+   
 
             function S(e) {
                 return {
