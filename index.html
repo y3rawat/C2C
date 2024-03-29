@@ -74,30 +74,25 @@
   </script>
 
     <script>
-        window.addEventListener('load', function() {
-            // Function to check device type and redirect accordingly
-            function checkDeviceType() {
-                if (window.innerWidth > 768) {
-                    // If width is greater than 768px, it could be a tablet or a web browser
-                    if (window.innerWidth <= 1024 && window.innerHeight <= 1024) {
-                        // If width and height are less than or equal to 1024px, assume it's a tablet
-                        window.location.href = 'main.html';
-                    } else {
-                        // Otherwise, assume it's a web browser
-                        window.location.href = 'main.html';
-                    }
-                } else {
-                    // If width is less than or equal to 768px, assume it's a mobile device
-                    window.location.href = 'Mobile_view.html';
-                }
-            }
-    
-            // Check device type on page load
-            checkDeviceType();
-    
-            // Check device type on window resize
-            window.addEventListener('resize', checkDeviceType);
-        });
+     window.addEventListener('load', function() {
+  // Function to check device type and redirect accordingly
+  function checkDeviceType() {
+    if (window.innerWidth > 533) {
+      // If width is greater than 533px, open main.html
+      window.location.href = 'main.html';
+    } else {
+      // If width is less than or equal to 533px, open mobile.html
+      window.location.href = 'mobile.html';
+    }
+  }
+
+  // Check device type on page load
+  checkDeviceType();
+
+  // Check device type on window resize
+  window.addEventListener('resize', checkDeviceType);
+});
+
     </script>
     
 </head>
