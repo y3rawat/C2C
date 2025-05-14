@@ -4,15 +4,39 @@
   <meta charset="UTF-8">
   <title>Candidate things</title>
   <link rel="stylesheet" href="Candidate_button/iph.css">
-
+  <style>
+    /* Maintenance Banner Styles */
+    .maintenance-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ff6b6b;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+        z-index: 9999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        font-size: 16px;
+    }
+    .maintenance-button {
+        display: inline-block;
+        margin-left: 10px;
+        background-color: white;
+        color: #ff6b6b;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-
-
-
-
-
-
+  <div class="maintenance-banner">
+    This page is currently under maintenance and could be shut down after 21 Jan 2025
+    <span class="maintenance-button" onclick="window.location.href='maintenance.html'">Learn More</span>
+  </div>
 
   
   <!-- Your form -->
@@ -83,6 +107,10 @@
 
 
   <style>
+    /* Fix for banner */
+    .animation, .radio-inputs, #svg-container, .image, .widgets, .iphone {
+      margin-top: 50px !important;
+    }
     .container {
       position: relative;
       height: 100vh;
